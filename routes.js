@@ -2,8 +2,10 @@ const express = require('express');
 
 const routes = express.Router();
 
-routes.get('/teste', function(request, response){
-    response.redirect('http://google.com/');
-});
+const LinkController = require('./src/controllers/LinkController')
+
+routes.get('/', LinkController.index);
+routes.get('/:code', LinkController.goTo);
+routes.post('/generate', LinkController.generate);
 
 module.exports = routes;

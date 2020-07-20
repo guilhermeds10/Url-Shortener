@@ -1,8 +1,18 @@
 // Update with your config settings.
 
 module.exports = {
-
   development: {
+    client: 'mysql',
+    connection: {
+      database: 'cutly',
+      user:     'root',
+      password: 'root'
+    },
+    migrations: {
+      directory:'./src/database/migrations'
+    }
+  },
+  /*development: {
     client: 'sqlite3',
     connection: {
       filename: './src/database/database.sqlite'
@@ -10,7 +20,7 @@ module.exports = {
     migrations: {
       directory:'./src/database/migrations'
     }
-  },
+  },*/
 
   staging: {
     client: 'postgresql',

@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="/public/images/link-icon.png">
+        <title>Cutly</title>
+        <link rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+        <link href="/public/css/cutly.css" rel="stylesheet">
+    </head>
+
+    <body class="text-center">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <h3 class="masthead-brand">Cutly <img src="/public/images/link-icon.png"></h3>
+                </div>
+            </header>
+            <main role="main" class="inner cover">
+                {% block main %}{% endblock %}
+            </main>
+            <footer class="mastfoot mt-auto">
+                <div class="inner">
+                    <p>2020 - Todos os direitos reservados.</p>
+                </div>
+            </footer>
+          
+        </div>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

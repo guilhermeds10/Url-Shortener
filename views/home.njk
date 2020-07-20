@@ -1,0 +1,17 @@
+{% extends 'base.njk' %}
+
+{% block main %}
+
+    <h1 class="cover-heading">Encurtar URL</h1>
+    <form method="POST" action="/generate">
+    <div class="row">
+        <div class="col-sm-12 form-group">
+            <input type="text" name="url" class="form-control" placeholder="Insira abaixo a URL a ser encurtada." required>
+        </div>
+    </div>
+    <p class="lead">
+        <button type="submit" class="btn btn-lg btn-secondary">Encurtar</button>
+    </p>
+    </form>
+
+{% endblock %}

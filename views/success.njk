@@ -1,0 +1,34 @@
+{% extends 'base.njk' %}
+
+{% block main %}
+
+    <h1 class="cover-heading">Sucesso, url foi encurtada!</h1>
+    <div class="row">
+        <div class="col-sm-12 form-group">
+            <input id="url" type="text" class="form-control" value="{{redirect_url}}" onfocus="copy();" readonly>
+        </div>
+    </div>
+    <p>Url extensa: {{extended_url}}</p>
+    <p class="success" style="display:none;" id="copied">Copiado!</p>
+    <p class="lead">
+        <a href="#" class="btn btn-lg btn-success" onclick="copy();">Copiar</a>
+        <a href="/" class="btn btn-lg btn-secondary">Encurtar outra URL</a>
+    </p>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function 
+copy() {
+
+  const copyText = document.getElementById("url");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+
+  document.getElementById("copied").style.display = "block";
+}
+</script>
+{% endblock %}
