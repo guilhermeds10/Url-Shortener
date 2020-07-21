@@ -1,5 +1,6 @@
 const connection = require('../database/connection');
 const nunjucks = require('nunjucks');
+const qrcode = require('qrcode');
 
 const module_ = module.exports = {
 
@@ -19,8 +20,15 @@ const module_ = module.exports = {
     async generate(request, response){
         const redirect_url = request.body.url;
         const code = await module_.generateCode(redirect_url);
+        qrcode.toFile(__dirname + `/../../public/qrcodes/${code}.png`, redirect_url, {
+            color: {
+              dark: '#000000',
+              light: '#fff'
+            }
+        });
         const view = nunjucks.render('success.njk', { 
             redirect_url:`http://localhost:3333/${code}`,
+            code:code,
             extended_url:redirect_url
         });
         response.send(view);
